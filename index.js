@@ -8,7 +8,7 @@ const initRoutes = require('./routes')
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin || origin === process.env.APP_URL) callback(null, true)
+    if (origin === process.env.APP_URL) callback(null, true)
     else callback(new Error('Not allowed by CORS'))
   }
 }
